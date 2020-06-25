@@ -21,10 +21,11 @@
     <main class="main">
     <div class="container">
         <section class="text-transformations">
-            <form class="js-form form" action="#">
+            <h2 class="text-transformations__title h2-title visually-hidden">Трансформируйте текст:</h2>
+            <form class="js-form text-transformations__form" action="#">
                 <div class="text-before">
                     <label class="text-label" for="before">Введите текст:</label>
-                    <textarea class="js-textarea-before textarea" name="before"></textarea>
+                    <textarea class="js-textarea-before textarea" name="before" id="before"></textarea>
                 </div>
 
                 <div class="text-control">
@@ -36,17 +37,10 @@
                 <div class="text-after">
                     <label class="text-label" for="after">Необходимое отображение:</label>
                     <div class="js-copy-this popup-copy">Copy this!</div>
-                    <button class="js-btn-copy button-after">Copy text</button>
-                    <textarea readonly class="js-textarea-after textarea-after textarea" name="before"></textarea>
+                    <button class="js-btn-copy button-after copy-btn">Copy text</button>
+                    <textarea readonly class="js-textarea-after textarea-after textarea" name="after" id="after"></textarea>
                 </div>
             </form>
-        </section>
-
-        <section class="act-description">
-            <p class="act-description__desc"> 
-                <span>В Верхний регистр</span> преобразует весь текст в большие буквы</p>
-            <p class="act-description__desc">
-                <span>В нижний регистр</span> преобразует весь текст в маленькие буквы</p>
         </section>
     </div>
 </main>

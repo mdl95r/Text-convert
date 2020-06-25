@@ -1,6 +1,7 @@
 .header {
   background: #4cb2cb;
   color: #fff;
+  margin-bottom: 80px;
 }
 
 .top-bar {
@@ -26,10 +27,6 @@
 
 .top-bar .site-desc {
   font-size: 18px;
-}
-
-.main {
-  padding: 120px 0;
 }
 
 .text-transformations {
@@ -107,9 +104,6 @@
   position: absolute;
   top: 34px;
   right: 0px;
-  font-size: 17px;
-  color: #c4c4c4;
-  padding: 10px;
 }
 
 .text-transformations__form .popup-copy {
@@ -142,12 +136,6 @@
 .text-transformations__form .textarea-after {
   width: calc(230px - 15px);
   padding-right: 83px;
-}
-
-.text-transformations__form .copy-btn {
-  font-size: 15px;
-  color: #9f9f9f;
-  padding: 4px;
 }
 
 .h2-title {
@@ -217,9 +205,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .main {
-    padding: 50px 0;
-  }
   .text-transformations__form .text-control {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -229,14 +214,13 @@
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
-    padding-right: 0;
-    margin-bottom: 10px;
+    padding-right: 10px;
   }
   .text-transformations__form .text-after {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-    padding-left: 0;
+    padding-left: 10px;
   }
   .text-transformations__form .popup-copy {
     width: calc(100% - 100px);
@@ -373,12 +357,4 @@ a {
 
 label {
   cursor: pointer;
-}
-
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
 }

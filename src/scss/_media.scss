@@ -5,20 +5,25 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .main {
+        padding: 50px 0;
+    }
+    
     .text-transformations {
-        .form {
+        &__form {
             .text-control {
                 order: 2;
             }
     
             .text-before {
                 order: 0;
-                padding-right: 10px;
+                padding-right: 0;
+                margin-bottom: 10px;
             }
     
             .text-after {
                 order: 1;
-                padding-left: 10px;
+                padding-left: 0;
             }
 
             .popup-copy {

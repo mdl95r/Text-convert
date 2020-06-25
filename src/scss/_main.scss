@@ -1,6 +1,10 @@
+.main {
+    padding: 120px 0;
+}
+
 .text-transformations {
     margin-bottom: 40px;
-    .form {
+    &__form {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -50,7 +54,7 @@
                 top: 34px;
                 right: 0px;
                 font-size: 17px;
-                color: $light-grey;
+                color: #c4c4c4;
                 padding: 10px;
             }
         }
@@ -85,7 +89,19 @@
             width: calc(230px - 15px);
             padding-right: 83px;
         }
+
+        .copy-btn {
+            font-size: 15px;
+            color: #9f9f9f;
+            padding: 4px;
+        }
     }
+}
+
+.h2-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .act-description {
@@ -93,7 +109,6 @@
     justify-content: center;
     flex-direction: column;
     font-size: 16px;
-    margin-bottom: 40px;
     padding: 50px 0;
     &__desc {
         align-self: center;
@@ -107,18 +122,4 @@
             color: $green;
         }
     }
-}
-
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    min-height: 60px;
-    text-transform: uppercase;
-    padding: 5px 0;
-    background: $background-blue;
-    color: $white;
-    font-size: 18px;
 }

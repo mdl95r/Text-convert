@@ -14,7 +14,6 @@ const path = {
 
   src: {
     html: [source_folder+"/*.html", "!"+source_folder+"/_*.html"],
-    pug: source_folder+"/index.pug",
     css: source_folder+"/scss/style.scss",
     js: source_folder+"/js/**/*.js",
     img: source_folder + "/img/**/*.{jpg, png, svg, webp}",

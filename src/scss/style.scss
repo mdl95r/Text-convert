@@ -1,6 +1,7 @@
 @import "_variables.scss";
 @import "_header.scss";
 @import "_main.scss";
+@import "_footer.scss";
 @import "_media.scss";
 
 html {
@@ -16,7 +17,6 @@ body {
     background: $background-main;
 }
 
-/* open-sans-regular - latin */
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -29,7 +29,7 @@ body {
          url('../fonts/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
-  /* open-sans-700 - latin */
+
   @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -42,7 +42,7 @@ body {
          url('../fonts/open-sans-v17-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/open-sans-v17-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
   }
-  /* open-sans-800 - latin */
+
   @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -95,4 +95,16 @@ button {
 
 a {
     color: $color_main;
+}
+
+label {
+    cursor: pointer;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
 }
