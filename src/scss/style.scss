@@ -9,6 +9,9 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     box-sizing: border-box;
     color: $color_main;
     min-width: $min-width;
