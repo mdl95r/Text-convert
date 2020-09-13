@@ -1,74 +1,82 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const btn_before = document.querySelector('.js-before');
-    const btn_after = document.querySelector('.js-after');
     const form = document.querySelector('.js-form');
     const resetAll = document.querySelector('.js-reset');
+    const toLowerCaseBtn = document.querySelector('.js-after');
+    const toUpperCaseBtn = document.querySelector('.js-before');
     const copyBtn = document.querySelector('.js-btn-copy');
-    const copyThis = document.querySelector('.js-copy-this');
+    const textarea_before = document.querySelector('.js-textarea-before');
+    const textarea_after = document.querySelector('.js-textarea-after');
+    const getStorageId = localStorage.getItem('id');
 
-    let textarea_beforeValue;
-    let textarea_beforeUpperCase;
-    let textarea_afterLowerCase;
+    loadStorage()
 
+    textarea_before.addEventListener('keyup', function () {
+        checkReg();
+    })
 
-    btn_before.addEventListener('click', function () {
-        const textarea_after = document.querySelector('.js-textarea-after');
-        const textarea_before = document.querySelector('.js-textarea-before');
-
-        if (textarea_before.value == '' || textarea_before.value == null) {
-            alert('Введите слово!')
-        } else {
-            textarea_beforeValue = textarea_before.value
-
-            textarea_beforeUpperCase = textarea_beforeValue.toUpperCase();
-
-            textarea_after.value = textarea_beforeUpperCase
+    /**
+    *  Проверяем какая кнопка нажата и производим трансформацию текста, 
+    * а так же задаем в localStorage id кнопки которая выбрана
+    */
+    function checkReg() {
+        if (toLowerCaseBtn.classList.contains('text-control__btn--active')) {
+            let textAreaInput = textarea_before.value
+            textarea_after.value = textAreaInput.toLowerCase();
+            localStorage.setItem('id', 1)
         }
-    });
-
-    btn_after.addEventListener('click', function () {
-        const textarea_after = document.querySelector('.js-textarea-after');
-        const textarea_before = document.querySelector('.js-textarea-before');
-
-        if (textarea_before.value == '' || textarea_before.value == null) {
-            alert('Введите слово!')
-        } else {
-            textarea_beforeValue = textarea_before.value
-
-            textarea_afterLowerCase = textarea_beforeValue.toLowerCase();
-
-            const firstUpperCase = textarea_afterLowerCase[0].toUpperCase() + textarea_afterLowerCase.slice(1);
-
-            textarea_after.value = firstUpperCase
+        if (toUpperCaseBtn.classList.contains('text-control__btn--active')) {
+            let textAreaInput = textarea_before.value
+            textarea_after.value = textAreaInput.toUpperCase();
+            localStorage.setItem('id', 2)
         }
-    });
+    }
 
+    // Кнопки в нижний и верхний регистр
+    toUpperCaseBtn.addEventListener('click', function () {
+        this.classList.add('text-control__btn--active');
+        toLowerCaseBtn.classList.remove('text-control__btn--active');
+        checkReg();
+    })
+
+    toLowerCaseBtn.addEventListener('click', function () {
+        this.classList.add('text-control__btn--active');
+        toUpperCaseBtn.classList.remove('text-control__btn--active');
+        checkReg();
+    })
+
+    // сбрасываем форму и чистим localStorage
     resetAll.addEventListener('click', function () {
         form.reset();
+        localStorage.clear();
     });
 
+    // копируем значение и сохраняем оба поля в localStorage
     copyBtn.addEventListener('click', function (e) {
-        const textarea_after = document.querySelector('.js-textarea-after');
         e.preventDefault();
-        if (textarea_after.value == '' || textarea_after.value == null) {
-            copyThis.innerText = 'Type anything!'
-        } else {
-            textarea_after.select();
-            document.execCommand("copy");
-            copyThis.innerText = `${textarea_after.value} copied successful!`;
-        }
+        textarea_after.select();
+        document.execCommand("copy");
+        localStorage.setItem('item-before', textarea_before.value);
+        localStorage.setItem('item-after', textarea_after.value);
     });
 
-    copyBtn.addEventListener('mouseover', function () {
-        copyThis.classList.add('active')
-    })
+    // получаем данные из хранилища
+    function getInputs() {
+        textarea_before.value = localStorage.getItem('item-before');
+        textarea_after.value = localStorage.getItem('item-after');
+    }
 
-    copyBtn.addEventListener('mouseout', function () {
-        setTimeout(function () {
-            copyThis.classList.remove('active');
-            copyThis.innerText = 'Copy this!'
-        }, 1000)
-    })
+    // функция проверяющая при загрузке, какая кнопка была нажата
+    function loadStorage() {
+        if (getStorageId == 1) {
+            toLowerCaseBtn.classList.add('text-control__btn--active');
+            toUpperCaseBtn.classList.remove('text-control__btn--active');
+        }
+        if (getStorageId == 2) {
+            toUpperCaseBtn.classList.add('text-control__btn--active');
+            toLowerCaseBtn.classList.remove('text-control__btn--active');
+        }
+        getInputs()
+    }
 });

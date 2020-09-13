@@ -1,6 +1,9 @@
 .header {
     background: $background-blue;
     color: $white;
+    @media (max-width: 992px) {
+        margin-bottom: 20px;
+    }
 }
 
 .top-bar {
@@ -13,8 +16,14 @@
     padding: 5px 0;
     .site-title {
         font-size: 23px;
+        @media (max-width: 576px) {
+            font-size: 19px;
+        }
     }
     .site-desc {
         font-size: 18px;
+        @media (max-width: 576px) {
+            font-size: 14px;
+        }
     }
 }

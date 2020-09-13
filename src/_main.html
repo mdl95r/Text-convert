@@ -1,27 +1,39 @@
 <main class="main">
     <div class="container">
         <section class="text-transformations">
-            <h2 class="text-transformations__title h2-title visually-hidden">Трансформируйте текст:</h2>
-            <form class="js-form text-transformations__form" action="#">
-                <div class="text-before">
-                    <label class="text-label" for="before">Введите текст:</label>
-                    <textarea class="js-textarea-before textarea" name="before" id="before"></textarea>
+            <h2 class="text-transformations__title visually-hidden">Трансформируйте текст:</h2>
+            <form class="text-transformations__form form js-form" action="#">
+                <div class="text-transformations__text-wrapper">
+                    <label class="text-transformations__text-label" for="before">Введите текст:</label>
+                    <textarea class="text-transformations__textarea js-textarea-before" id="before"></textarea>
+                    <button type="reset" class="text-transformations__reset-btn js-reset" title="Сбросить"></button>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="text-transformations__reset-icon">
+                        <path
+                            d="M268 256.8l138.7-138.6a8 8 0 10-11.4-11.4L256.7 245.4 118.3 106.8a8 8 0 10-11.4 11.4l138.6 138.6-138.6 138.5a8 8 0 1011.4 11.4L256.8 268l138.5 138.6a8 8 0 0011.4 0 8 8 0 000-11.4L268 256.7z"
+                            id="cross_copy" />
+                    </svg>
                 </div>
 
                 <div class="text-control">
-                    <button type="button" class="js-before text-control__btn">В верхний регистр</button>
-                    <button type="button" class="js-after text-control__btn">В нижний регистр</button>
-                    <button type="reset" class="js-reset text-control__btn">Очистить</button>
+                    <button type="button" class="text-control__btn text-control__btn--active js-after">Нижний
+                        регистр</button>
+                    <button type="button" class="text-control__btn js-before">Верхний регистр</button>
                 </div>
 
-                <div class="text-after">
-                    <label class="text-label" for="after">Необходимое отображение:</label>
-                    <div class="js-copy-this popup-copy">Copy this!</div>
-                    <button class="js-btn-copy button-after copy-btn">Copy text</button>
-                    <textarea readonly class="js-textarea-after textarea-after textarea" name="after" id="after"></textarea>
+                <div class="text-transformations__text-wrapper">
+                    <label class="text-transformations__text-label" for="after">Необходимое отображение:</label>
+                    <textarea readonly class="text-transformations__textarea js-textarea-after" id="after"></textarea>
+                    <button class="text-transformations__copy-btn js-btn-copy" title="Копировать"></button>
+                    <svg viewBox="-21 0 512 512" xmlns="http://www.w3.org/2000/svg"
+                        class="text-transformations__copy-icon">
+                        <path
+                            d="M325.3 512H58.7A58.7 58.7 0 010 453.3v-288a58.7 58.7 0 0158.7-58.6h10.6a16 16 0 010 32H58.7c-14.7 0-26.7 12-26.7 26.6v288C32 468 44 480 58.7 480h266.6c14.7 0 26.7-12 26.7-26.7v-10.6a16 16 0 0132 0v10.6a58.7 58.7 0 01-58.7 58.7zm0 0" />
+                        <path
+                            d="M410.7 384h-224a58.7 58.7 0 01-58.7-58.7V58.7A58.7 58.7 0 01186.7 0h224a58.7 58.7 0 0158.6 58.7v266.6a58.7 58.7 0 01-58.6 58.7zm-224-352C172 32 160 44 160 58.7v266.6c0 14.7 12 26.7 26.7 26.7h224c14.7 0 26.6-12 26.6-26.7V58.7c0-14.7-12-26.7-26.6-26.7zm0 0" />
+                    </svg>
                 </div>
             </form>
         </section>
     </div>
 </main>
-
