@@ -2,16 +2,15 @@ $color_main: #676767;
 $fw-normal: 400;
 $fw-bold: 700;
 $fw-superbold: 800;
-$ff-open-sans: 'Open Sans';
+$ff-open-sans: 'IBM Plex Serif';
 $min-width: 320px;
-$max-width-100: 100%;
-$background-blue: #4cb2cb;
-$background-blue-hover: #3b9cb3;
+$max-width-100: 1300px;
+$background-blue: #0B4E6A;
 $white: #fff;
-$background-main: #f9f9f9;
+$black: #000;
+$background-main:#E5E5E5;
 $grey: #555;
 $light-grey: #c4c4c4;
-$green: #00aa00;
 
 @mixin transition-default {
     transition: all .4s ease;

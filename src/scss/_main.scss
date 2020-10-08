@@ -1,6 +1,7 @@
 .main {
+    position: relative;
     flex-grow: 1;
-    padding: 120px 0;
+    padding: 70px 0;
     @media (max-width: 768px) {
         padding: 50px 0; 
     }
@@ -8,50 +9,44 @@
 
 .text-transformations {
     margin-bottom: 40px;
+    &__title {
+        margin-bottom: 40px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 48px;
+        text-align: center;
+        @media (max-width: 768px) {
+            font-size: 21px;
+        }
+    }
     &__text-wrapper {
         position: relative;
     }
+    &__label-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        padding: 19px;
+        background: #0B4E6A;
+        color: #fff;
+    }
     &__text-label {
-        display: block;
-        margin-bottom: 14px;
+        font-size: 18px;
+        font-family: 'Oswald-bold', sans-serif;
     }
     &__textarea {
-        width: calc(270px - 15px);
-        height: 200px;
-        padding: 5px 30px 5px 5px;
+        width: 456px;
+        height: 420px;
+        padding: 70px 30px 5px 10px;
         resize: none;
-    }
-    &__reset-btn {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        top: 34px;
-        right: 0px;
-        z-index: 10;
-    }
-    &__reset-icon {
-        width: 25px;
-        height: 25px;
-        position: absolute;
-        top: 35px;
-        right: 2px;
-        fill: #a7a7a7;
-    }
-    &__copy-icon {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 40px;
-        right: 5px;
-        fill: #a7a7a7;
-    }
-    &__copy-btn {
-        position: absolute;
-        top: 34px;
-        right: 0px;
-        z-index: 10;
-        width: 30px;
-        height: 30px;
+        font-size: 1.2em;
+        @media (max-width: 576px) {
+            width: 256px;
+            height: 220px;
+        }
     }
     &__form {
         display: flex;
@@ -60,6 +55,23 @@
         @media (max-width: 992px) {
             flex-direction: column;
         }
+    }
+    &__btn {
+        padding: 10px;
+        position: absolute;
+        bottom: 34px;
+        right: 50%;
+        z-index: 10;
+        font-size: 18px;
+        font-family: 'Oswald-bold', sans-serif;
+        background: #0B4E6A;
+        color: #fff;
+        border-radius: 5px;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
     }
 }
 
@@ -71,7 +83,9 @@
         order: 0;
     }
     &__btn {
-        padding: 10px 30px; 
+        width: 141px;
+        font-family: 'Oswald-bold', sans-serif;
+        padding: 10px 30px;
         margin-bottom: 10px;
         background: $background-blue;
         color: $white;
@@ -79,19 +93,49 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         outline-color: antiquewhite;
-
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
         &:last-child {
             margin-bottom: 0;
         }
 
         &:hover {
-            background: $background-blue-hover;
+            color: #0B4E6A;
+            background: #fff;
+            border: 1px solid #0B4E6A;
             @include transition-default;
         }
 
         &--active {
-            background: #19829b;
+            background: #fff;
+            color: #0B4E6A;
+            border: 1px solid #0B4E6A;
         }
+
+        &--first-letter {
+            text-transform: none;
+        }
+    }
+}
+
+.popup-copy {
+    position: fixed;
+    right: 0;
+    bottom: -999px;
+    z-index: 10;
+    font-family: 'Oswald-bold', sans-serif;
+    padding: 19px;
+    background: #0B4E6A;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    @include transition-default;
+    &_active {
+        bottom: 0;
+        @include transition-default;
     }
 }
 

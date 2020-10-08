@@ -1,8 +1,8 @@
 .header {
-    background: $background-blue;
+    background: linear-gradient(90deg, #00A3E8 0%, #6FE0E2 29.02%, #9EF2F1 50%, #6DDEE2 72.26%, #00A3E8 100%);
     color: $white;
-    @media (max-width: 992px) {
-        margin-bottom: 20px;
+    @media (max-width: 768px) {
+        padding-bottom: 10px;
     }
 }
 
@@ -12,18 +12,40 @@
     flex-wrap: wrap;
     align-items: center;
     min-height: 60px;
-    text-transform: uppercase;
-    padding: 5px 0;
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
     .site-title {
         font-size: 23px;
         @media (max-width: 576px) {
             font-size: 19px;
         }
     }
-    .site-desc {
+    &__icon {
+        width: 200px;
+        @media (max-width: 768px) {
+            width: 130px;
+        }
+    }
+}
+
+.site-desc {
+    font-size: 26px;
+    color: #000;
+    font-weight: bold;
+    @media (max-width: 768px) {
+        text-align: center;
         font-size: 18px;
-        @media (max-width: 576px) {
-            font-size: 14px;
+    }
+    &--upper {
+        text-transform: uppercase;
+    }
+    &--different {
+        &:after {
+            content: 'Н';
+        }
+        &:before {
+            content: 'ОН';
         }
     }
 }

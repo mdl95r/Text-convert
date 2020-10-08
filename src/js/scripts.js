@@ -1,82 +1,67 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('.js-form');
-    const resetAll = document.querySelector('.js-reset');
-    const toLowerCaseBtn = document.querySelector('.js-after');
-    const toUpperCaseBtn = document.querySelector('.js-before');
-    const copyBtn = document.querySelector('.js-btn-copy');
-    const textarea_before = document.querySelector('.js-textarea-before');
-    const textarea_after = document.querySelector('.js-textarea-after');
-    const getStorageId = localStorage.getItem('id');
+    const FORM = document.querySelector('.js-form');
+    const RESETALL = document.querySelector('.js-reset');
+    const TOLOWERCASEBTN = document.querySelector('.js-after');
+    const TOUPPERCASEBTN = document.querySelector('.js-before');
+    const COPYBTN = document.querySelector('.js-btn-copy');
+    const TEXTAREA_BEFORE = document.querySelector('.js-textarea-before');
+    const TEXTAREA_AFTER = document.querySelector('.js-textarea-after');
+    const POPUPCOPY = document.querySelector('.popup-copy');
 
-    loadStorage()
-
-    textarea_before.addEventListener('keyup', function () {
+    TEXTAREA_BEFORE.addEventListener('keyup', function () {
         checkReg();
     })
 
     /**
     *  Проверяем какая кнопка нажата и производим трансформацию текста, 
-    * а так же задаем в localStorage id кнопки которая выбрана
+    *
     */
     function checkReg() {
-        if (toLowerCaseBtn.classList.contains('text-control__btn--active')) {
-            let textAreaInput = textarea_before.value
-            textarea_after.value = textAreaInput.toLowerCase();
-            localStorage.setItem('id', 1)
+        if (TOLOWERCASEBTN.classList.contains('text-control__btn--active')) {
+            let textAreaInput = TEXTAREA_BEFORE.value
+            TEXTAREA_AFTER.value = textAreaInput.toLowerCase();
         }
-        if (toUpperCaseBtn.classList.contains('text-control__btn--active')) {
-            let textAreaInput = textarea_before.value
-            textarea_after.value = textAreaInput.toUpperCase();
-            localStorage.setItem('id', 2)
+        if (TOUPPERCASEBTN.classList.contains('text-control__btn--active')) {
+            let textAreaInput = TEXTAREA_BEFORE.value
+            TEXTAREA_AFTER.value = textAreaInput.toUpperCase();
         }
     }
 
-    // Кнопки в нижний и верхний регистр
-    toUpperCaseBtn.addEventListener('click', function () {
+    // !< Кнопки в нижний и верхний регистр >
+    TOUPPERCASEBTN.addEventListener('click', function () {
         this.classList.add('text-control__btn--active');
-        toLowerCaseBtn.classList.remove('text-control__btn--active');
+        TOLOWERCASEBTN.classList.remove('text-control__btn--active');
         checkReg();
     })
-
-    toLowerCaseBtn.addEventListener('click', function () {
+    TOLOWERCASEBTN.addEventListener('click', function () {
         this.classList.add('text-control__btn--active');
-        toUpperCaseBtn.classList.remove('text-control__btn--active');
+        TOUPPERCASEBTN.classList.remove('text-control__btn--active');
         checkReg();
     })
+    // < Кнопки в нижний и верхний регистр >!
 
-    // сбрасываем форму и чистим localStorage
-    resetAll.addEventListener('click', function () {
-        form.reset();
-        localStorage.clear();
+    // сбрасываем форму
+    RESETALL.addEventListener('click', function () {
+        FORM.reset();
     });
 
-    // копируем значение и сохраняем оба поля в localStorage
-    copyBtn.addEventListener('click', function (e) {
+    // копируем значение
+    COPYBTN.addEventListener('click', function (e) {
         e.preventDefault();
-        textarea_after.select();
+        popupCopy();
+        TEXTAREA_AFTER.select();
         document.execCommand("copy");
-        localStorage.setItem('item-before', textarea_before.value);
-        localStorage.setItem('item-after', textarea_after.value);
     });
 
-    // получаем данные из хранилища
-    function getInputs() {
-        textarea_before.value = localStorage.getItem('item-before');
-        textarea_after.value = localStorage.getItem('item-after');
-    }
-
-    // функция проверяющая при загрузке, какая кнопка была нажата
-    function loadStorage() {
-        if (getStorageId == 1) {
-            toLowerCaseBtn.classList.add('text-control__btn--active');
-            toUpperCaseBtn.classList.remove('text-control__btn--active');
+    function popupCopy() {
+        let textarea_before_val = TEXTAREA_BEFORE.value
+        if (textarea_before_val != '') {
+            POPUPCOPY.classList.add('popup-copy_active');
+            setTimeout(function () {
+                POPUPCOPY.classList.remove('popup-copy_active');
+            }, 2000)
         }
-        if (getStorageId == 2) {
-            toUpperCaseBtn.classList.add('text-control__btn--active');
-            toLowerCaseBtn.classList.remove('text-control__btn--active');
-        }
-        getInputs()
     }
 });

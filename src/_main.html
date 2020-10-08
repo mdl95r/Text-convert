@@ -1,18 +1,15 @@
 <main class="main">
     <div class="container">
         <section class="text-transformations">
-            <h2 class="text-transformations__title visually-hidden">Трансформируйте текст:</h2>
+            <h2 class="text-transformations__title">Конвертер регистров</h2>
             <form class="text-transformations__form form js-form" action="#">
                 <div class="text-transformations__text-wrapper">
-                    <label class="text-transformations__text-label" for="before">Введите текст:</label>
+                    <div class="text-transformations__label-wrap">
+                        <label class="text-transformations__text-label" for="before">Введите текст здесь</label>
+                    </div>
                     <textarea class="text-transformations__textarea js-textarea-before" id="before"></textarea>
-                    <button type="reset" class="text-transformations__reset-btn js-reset" title="Сбросить"></button>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                        class="text-transformations__reset-icon">
-                        <path
-                            d="M268 256.8l138.7-138.6a8 8 0 10-11.4-11.4L256.7 245.4 118.3 106.8a8 8 0 10-11.4 11.4l138.6 138.6-138.6 138.5a8 8 0 1011.4 11.4L256.8 268l138.5 138.6a8 8 0 0011.4 0 8 8 0 000-11.4L268 256.7z"
-                            id="cross_copy" />
-                    </svg>
+                    <button type="reset" class="text-transformations__reset-btn text-transformations__btn js-reset"
+                        title="Сбросить">Очистить</button>
                 </div>
 
                 <div class="text-control">
@@ -22,18 +19,15 @@
                 </div>
 
                 <div class="text-transformations__text-wrapper">
-                    <label class="text-transformations__text-label" for="after">Необходимое отображение:</label>
+                    <div class="text-transformations__label-wrap">
+                        <label class="text-transformations__text-label" for="after">Результат готов</label>
+                    </div>
                     <textarea readonly class="text-transformations__textarea js-textarea-after" id="after"></textarea>
-                    <button class="text-transformations__copy-btn js-btn-copy" title="Копировать"></button>
-                    <svg viewBox="-21 0 512 512" xmlns="http://www.w3.org/2000/svg"
-                        class="text-transformations__copy-icon">
-                        <path
-                            d="M325.3 512H58.7A58.7 58.7 0 010 453.3v-288a58.7 58.7 0 0158.7-58.6h10.6a16 16 0 010 32H58.7c-14.7 0-26.7 12-26.7 26.6v288C32 468 44 480 58.7 480h266.6c14.7 0 26.7-12 26.7-26.7v-10.6a16 16 0 0132 0v10.6a58.7 58.7 0 01-58.7 58.7zm0 0" />
-                        <path
-                            d="M410.7 384h-224a58.7 58.7 0 01-58.7-58.7V58.7A58.7 58.7 0 01186.7 0h224a58.7 58.7 0 0158.6 58.7v266.6a58.7 58.7 0 01-58.6 58.7zm-224-352C172 32 160 44 160 58.7v266.6c0 14.7 12 26.7 26.7 26.7h224c14.7 0 26.6-12 26.6-26.7V58.7c0-14.7-12-26.7-26.6-26.7zm0 0" />
-                    </svg>
+                    <button class="text-transformations__copy-btn text-transformations__btn js-btn-copy"
+                        title="Копировать">Копировать</button>
                 </div>
             </form>
         </section>
+        <div class="popup-copy">Значение скопировано!</div>
     </div>
 </main>

@@ -14,48 +14,31 @@ body {
     box-sizing: border-box;
     color: $color_main;
     min-width: $min-width;
-    font: 14px/1.4 'Open Sans', sans-serif;
+    font: 14px/1.4 'IBMPlexSerif', serif;
     letter-spacing: 1px;
     background: $background-main;
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: "IBMPlexSerif";
+    src: url("../fonts/IBMPlexSerif-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
     font-style: normal;
-    font-weight: $fw-normal;
-    src: url('../fonts/open-sans-v17-latin-regular.eot'); /* IE9 Compat Modes */
-    src: local('Open Sans Regular'), local('OpenSans-Regular'),
-         url('../fonts/open-sans-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/open-sans-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/open-sans-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/open-sans-v17-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
-  @font-face {
-    font-family: 'Open Sans';
+@font-face {
+    font-family: "IBMPlexSerif-Bold";
+    src: url("./fonts/IBMPlexSerif-Bold.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
     font-style: normal;
-    font-weight: $fw-bold;
-    src: url('../fonts/open-sans-v17-latin-700.eot'); /* IE9 Compat Modes */
-    src: local('Open Sans Bold'), local('OpenSans-Bold'),
-         url('../fonts/open-sans-v17-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/open-sans-v17-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/open-sans-v17-latin-700.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/open-sans-v17-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/open-sans-v17-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
   }
 
-  @font-face {
-    font-family: 'Open Sans';
+
+@font-face {
+    font-family: "Oswald-Bold";
+    src: url("../fonts/Oswald-Bold.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
     font-style: normal;
-    font-weight: $fw-superbold;
-    src: url('../fonts/open-sans-v17-latin-800.eot'); /* IE9 Compat Modes */
-    src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
-         url('../fonts/open-sans-v17-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/open-sans-v17-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/open-sans-v17-latin-800.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/open-sans-v17-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/open-sans-v17-latin-800.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 ul, li {
@@ -86,6 +69,7 @@ a {
 .container {
     max-width: $max-width-100;
     padding: 0 10px;
+    margin: 0 auto;
 }
 
 button {
